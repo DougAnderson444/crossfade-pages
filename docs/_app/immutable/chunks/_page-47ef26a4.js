@@ -1,0 +1,1 @@
+const o=!1;function r({params:e}){return{pageId:e.pageId}}const t=Object.freeze(Object.defineProperty({__proto__:null,prerender:!1,load:r},Symbol.toStringTag,{value:"Module"}));export{t as _,r as l,o as p};
