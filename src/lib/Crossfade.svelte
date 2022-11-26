@@ -13,7 +13,6 @@
 		const target = event?.target;
 		if (!target) return;
 		const closestItem = ((target as HTMLElement).closest('[data-id]') as HTMLElement)?.dataset.id;
-		console.log('handle click', { closestItem });
 		$selected = closestItem || ('' as string);
 	}
 </script>
@@ -26,7 +25,7 @@
 		on:click={handleNavigate}
 		on:keypress={handleNavigate}
 		data-id={id}
-		class=" {styling} "
+		class=" {styling} outline-none"
 		contenteditable="true"
 	>
 		<slot {handleNavigate} />
