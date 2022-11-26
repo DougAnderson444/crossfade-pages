@@ -12,6 +12,7 @@
 	let high90s = () => 100 - Math.random() * (max - min) + min;
 	let singlDigsR = () => Math.random() * (max / 2);
 	let singlDigsW = () => 1 + Math.random() * (max - min) + min;
+	let rotate = () => `rotate(${Math.floor(singlDigsW() / 2)}deg) scale(${1 + singlDigsR() / 20})`;
 
 	let lower = 3;
 	let higher = 100;
@@ -32,7 +33,7 @@
 </script>
 
 <div
-	class="flex flex-col m-2 p-2 w-fit min-w-0 border border-solid border-black/50 font-architect focus:outline-green-500  {styling} "
+	class="flex flex-col m-2 p-2 w-fit min-w-0 border border-solid border-neutral-800/70 font-architect focus:outline-green-500  {styling} "
 	style:border-radius={bordRad()}
 	style:border-width={borderWidth()}
 	style:outline-radius={bordRad()}
