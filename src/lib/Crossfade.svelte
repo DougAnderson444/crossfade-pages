@@ -2,6 +2,7 @@
 	import { crossfade, selected } from '$lib/crossfade';
 
 	export let id: any;
+	export let styling = ' ';
 
 	const [send, receive] = crossfade;
 
@@ -17,18 +18,20 @@
 	}
 </script>
 
-<div
-	out:send={{ key: id }}
-	in:receive={{ key: id }}
-	on:click={handleNavigate}
-	on:keypress={handleNavigate}
-	data-id={id}
-	class="flex-0 relative"
-	contenteditable="true"
-	style="border: 1px solid crimson; width: 100px; height: 100px; display: block; grid-area: 1/1;"
->
-	<slot {handleNavigate} />
-</div>
+{#if styling}
+	<!-- Crossfade Component -->
+	<div
+		out:send={{ key: id }}
+		in:receive={{ key: id }}
+		on:click={handleNavigate}
+		on:keypress={handleNavigate}
+		data-id={id}
+		class=" {styling} "
+		contenteditable="true"
+	>
+		<slot {handleNavigate} />
+	</div>
+{/if}
 
 <style>
 	div {

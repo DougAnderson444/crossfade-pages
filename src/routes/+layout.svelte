@@ -5,7 +5,7 @@
 </script>
 
 <FillVertical>
-	<main class="flex flex-col h-full">
+	<main class="flex flex-col h-full w-full">
 		<div class="w-full h-full border-2 border-green-500 items-center justify-items-center">
 			<slot />
 		</div>
