@@ -5,7 +5,7 @@
 </script>
 
 <FillVertical>
-	<div class="relative w-full h-screen border-2 border-green-500 items-center justify-items-center">
+	<div class="relative w-full h-full border-2 border-green-500 items-center justify-items-center">
 		<slot />
 		<BottomMenu />
 	</div>
