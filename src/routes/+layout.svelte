@@ -1,7 +1,12 @@
 <script>
 	import '../app.css';
+	import BottomMenu from '$lib/Menu/BottomMenu.svelte';
+	import FillVertical from '@douganderson444/svelte-fillvert';
 </script>
 
-<div class="grid w-96 h-96 border-2 border-green-500 items-center justify-items-center">
-	<slot />
-</div>
+<FillVertical>
+	<div class="relative w-full h-screen border-2 border-green-500 items-center justify-items-center">
+		<slot />
+		<BottomMenu />
+	</div>
+</FillVertical>
