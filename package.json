@@ -29,6 +29,7 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"@douganderson444/svelte-fillvert": "1.0.0",
 		"nanoid": "^4.0.0"
 	}
 }
