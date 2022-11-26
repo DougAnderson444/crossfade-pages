@@ -1,9 +1,8 @@
 <script>
+	import Crossfade from '$lib/Crossfade.svelte';
 	import { items } from '$lib/stores';
-	import { crossfade, selected } from '$lib/crossfade';
 	import { nanoid } from 'nanoid/non-secure';
-
-	const [send, receive] = crossfade;
+	import Expand from '$lib/SVGs/Expand.svelte';
 
 	if (!$items.length) {
 		$items = [
@@ -13,27 +12,19 @@
 			}
 		];
 	}
-
-	function handleNavigate(event) {
-		$selected = event.target.id;
-	}
 </script>
 
 <div class="flex flex-row flex-wrap">
 	{#if $items && $items.length}
 		{#each $items as item, i}
-			<a
-				on:click={handleNavigate}
-				out:send={{ key: item.id }}
-				in:receive={{ key: item.id }}
-				id={item.id}
-				data-item={item}
-				class="flex-0"
-				style="border: 1px solid crimson; width: 100px; height: 100px; display: block; grid-area: 1/1;"
-				href="/foo"
-				>Item {item.id}
-				<br />Go to foo</a
-			>
+			<Crossfade id={item.id}>
+				<a href="/foo" class="select-none cursor-pointer" contenteditable={false}
+					><div class="float-right top-0 right-0 h-6 w-6 m-1 text-neutral-800/50">
+						<Expand />
+					</div></a
+				>
+				{item.id}
+			</Crossfade>
 		{/each}
 	{/if}
 </div>

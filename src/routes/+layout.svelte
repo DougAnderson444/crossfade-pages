@@ -5,8 +5,12 @@
 </script>
 
 <FillVertical>
-	<div class="relative w-full h-full border-2 border-green-500 items-center justify-items-center">
-		<slot />
-		<BottomMenu />
-	</div>
+	<main class="flex flex-col h-full">
+		<div class="w-full h-full border-2 border-green-500 items-center justify-items-center">
+			<slot />
+		</div>
+		<div class="w-full h-16">
+			<BottomMenu />
+		</div>
+	</main>
 </FillVertical>
