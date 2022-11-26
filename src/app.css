@@ -1,3 +1,36 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+	html {
+		@apply box-border;
+	}
+}
+
+@font-face {
+	font-family: 'Architects Daughter';
+	src: local('Architects Daughter Regular'), local('ArchitectsDaughter-Regular'),
+		url('/fonts/architect/ArchitectsDaughter-Regular.woff2') format('woff2');
+	font-weight: normal;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Bangers';
+	src: local('Bangers Regular'), local('Bangers-Regular'),
+		url('/fonts/bangers/Bangers-Regular.woff2') format('woff2');
+	font-weight: normal;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Just Another Hand';
+	src: local('Just Another Hand'), local('Just-Another-Hand'),
+		url('/fonts/Just-Another-Hand.woff2') format('woff2');
+	font-weight: normal;
+	font-style: normal;
+	font-display: swap;
+}
