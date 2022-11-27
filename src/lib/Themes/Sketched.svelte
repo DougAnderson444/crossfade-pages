@@ -33,7 +33,7 @@
 </script>
 
 <div
-	class="flex flex-col m-2 p-2 w-fit min-w-0 border border-solid border-neutral-800/70 font-architect focus:outline-green-500  {styling} "
+	class="flex-1 flex flex-col m-2 p-2 min-w-0 h-full border border-dashed border-neutral-700/60 font-architect focus:outline-green-500  {styling} "
 	style:border-radius={bordRad()}
 	style:border-width={borderWidth()}
 	style:outline-radius={bordRad()}

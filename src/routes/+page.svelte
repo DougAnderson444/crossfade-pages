@@ -1,4 +1,5 @@
 <script>
+	import Node from '$lib/Node.svelte';
 	import Crossfade from '$lib/Crossfade.svelte';
 	import Sketched from '$lib/Themes/Sketched.svelte';
 	import { items } from '$lib/stores';
@@ -17,12 +18,13 @@
 
 <!-- This page div must be absolute so it doesnt jump when the crossfade happens -->
 <!-- Insides are flexbox so it neatly organizes -->
-<div class="absolute flex flex-row flex-wrap">
+<div class="absolute flex flex-col flex-wrap h-full w-full items-stretch">
 	{#if $items && $items.length}
 		{#each $items as item, i}
+			<!-- <Node> -->
 			<Crossfade id={item.id}>
 				<Sketched>
-					<div class="flex flex-col flex-wrap w-full h-full">
+					<div class="flex-1 flex flex-col flex-wrap w-full h-full">
 						<a href="/foo" class="select-none cursor-pointer" contenteditable={false}
 							><div class="float-right top-0 right-0 h-6 w-6 m-1 text-neutral-800/50">
 								<Expand />
@@ -32,6 +34,7 @@
 					</div>
 				</Sketched>
 			</Crossfade>
+			<!-- </Node> -->
 		{/each}
 	{/if}
 </div>

@@ -6,7 +6,7 @@
 
 <FillVertical>
 	<main class="flex flex-col h-full w-full" data-sveltekit-prefetch>
-		<div class="w-full h-full border-2 border-green-500 items-center justify-items-center">
+		<div class="flex-1">
 			<slot />
 		</div>
 		<div class="w-full h-16">
