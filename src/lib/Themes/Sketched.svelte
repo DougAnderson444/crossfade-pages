@@ -1,6 +1,9 @@
 <script>
 	import { onMount } from 'svelte';
 	import Resizer from './Resizer.svelte';
+	import { fly, scale } from 'svelte/transition';
+	import { quintOut, elasticOut } from 'svelte/easing';
+
 	export let styling = 'bg-transparent ';
 	export let focused = false;
 
@@ -43,6 +46,7 @@
 	on:blur
 	bind:offsetWidth
 	bind:offsetHeight
+	in:scale={{ easing: elasticOut }}
 >
 	<slot />
 	{#if mounted && focused && offsetWidth && offsetHeight}
