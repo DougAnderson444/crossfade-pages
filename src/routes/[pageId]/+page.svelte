@@ -15,7 +15,8 @@
 	<!-- Technically, this should have a higher z-index as well -->
 	<Crossfade id={$selected} styling={'absolute w-5/6'}>
 		<a
-			class="w-full h-96 bg-white"
+			class="w-full h-96 bg-white cursor-pointer select-none"
+			contenteditable={false}
 			style="border: 10px solid crimson; display: block; grid-area: 1/1;"
 			href="/">Go to /</a
 		>
