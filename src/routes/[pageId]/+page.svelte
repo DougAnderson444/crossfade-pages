@@ -1,4 +1,5 @@
 <script>
+	import Page from '$lib/Page.svelte';
 	import Crossfade from '$lib/Crossfade.svelte';
 	/**
 	 * Pass around $selected so the crossfades know what the to/from send/rx locations are
@@ -7,15 +8,14 @@
 
 	/** @type {import('./$types').PageData} */
 	export let data;
+	$: pageId = data.pageId; // refresh page when pageId changes
 </script>
 
-{#if $selected}
+{#key pageId}
 	<!-- When Crossfade enters as a new page, it needs to be position:absolute to cover up the old page before the old page disappears -->
 	<!-- Otherwise, there is a jump because they don't overlap ech other -->
 	<!-- Technically, this should have a higher z-index as well -->
-	<Crossfade id={$selected} styling={'absolute'}>
-		<div class="w-96 h-96 cursor-pointer select-none bg-green-500">
-			<a contenteditable={false} style="display: block; grid-area: 1/1;" href="/">Go to /</a>
-		</div>
+	<Crossfade id={pageId} styling={'absolute w-96 h-96 z-20'}>
+		<Page {pageId} />
 	</Crossfade>
-{/if}
+{/key}
