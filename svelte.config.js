@@ -17,7 +17,11 @@ const config = {
 			assets: 'docs',
 			fallback: 'index.html',
 			precompress: true // false
-		})
+		}),
+		paths: {
+			// change below to your repo name
+			base: '/crossfade-pages'
+		}
 	}
 };
 

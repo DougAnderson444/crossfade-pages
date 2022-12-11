@@ -1,1 +1,0 @@
-import{B as i}from"./index-d2e69dce.js";let l="useandom-26T198340PX75pxJACKVERYMINDBUSHWOLF_GQZbfghjklqvwyzrict",n=(e=21)=>{let t="",a=e;for(;a--;)t+=l[Math.random()*64|0];return t};const o=i([]);export{o as i,n};
