@@ -1,11 +1,13 @@
 <script>
 	import Page from '$lib/Page.svelte';
 	import { data } from '$lib/stores';
+	import { createNewPage, generatePastelHex, generateVibrantHex } from '$lib/utils';
 
 	if (!$data) {
 		$data = {
 			home: {
-				children: []
+				children: [],
+				color: generateVibrantHex()
 			}
 		};
 	}

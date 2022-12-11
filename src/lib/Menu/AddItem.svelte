@@ -4,24 +4,12 @@
 	 */
 	import { nanoid } from 'nanoid/non-secure';
 	import { data } from '$lib/stores';
+	import { createNewPage } from '$lib/utils';
 
 	export let pageId: string | number;
 
 	function handleAddItem() {
-		const id = nanoid(6);
-		$data = {
-			...$data,
-			// create the page
-			[id]: {
-				children: []
-			},
-			// add it as a child to the creator page
-			[pageId]: {
-				...$data[pageId],
-				children: [...$data[pageId].children, { id }]
-			}
-		};
-		console.log('data now: ', $data);
+		createNewPage(pageId);
 	}
 </script>
 
