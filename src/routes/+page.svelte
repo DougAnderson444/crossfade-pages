@@ -1,13 +1,13 @@
 <script>
 	import Crossfade from '$lib/Crossfade.svelte';
-	import { items } from '$lib/stores';
+	import { data } from '$lib/stores';
 	import { nanoid } from 'nanoid/non-secure';
 	import Expand from '$lib/SVGs/Expand.svelte';
 	import { duration } from '$lib/crossfade';
 	import { fade } from 'svelte/transition';
 
-	if (!$items.length) {
-		$items = [
+	if (!$data.length) {
+		$data = [
 			{
 				children: [],
 				id: nanoid(6)
@@ -19,8 +19,8 @@
 <!-- This page div must be absolute so it doesnt jump when the crossfade happens -->
 <!-- Insides are flexbox so it neatly organizes -->
 <div class="absolute flex flex-row flex-wrap ">
-	{#if $items && $items.length}
-		{#each $items as item, i}
+	{#if $data && $data.length}
+		{#each $data as item, i}
 			<Crossfade id={item.id}>
 				<div
 					class="flex-1 flex flex-col flex-wrap bg-red-500 m-4 p-2 rounded-lg shadow text-white"

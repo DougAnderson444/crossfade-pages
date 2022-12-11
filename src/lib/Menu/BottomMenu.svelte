@@ -7,13 +7,13 @@
 	/**
 	 * @type {any[]}
 	 */
-	export let items = [];
+	export let data = [];
 </script>
 
 <div class="absolute bottom-0 right-0 m-1 p-1">
 	<ToolBox>
 		<ToolItem>
-			<AddItem bind:items>
+			<AddItem bind:data>
 				<Plus />
 			</AddItem>
 		</ToolItem>

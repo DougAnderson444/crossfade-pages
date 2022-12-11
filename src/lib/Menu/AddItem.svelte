@@ -3,12 +3,12 @@
 	 * On click, adds an item to the layout
 	 */
 	import { nanoid } from 'nanoid/non-secure';
-	import { items } from '$lib/stores';
+	import { data } from '$lib/stores';
 
 	function handleAddItem() {
 		console.log('add item');
-		$items = [
-			...$items,
+		$data = [
+			...$data,
 			{
 				children: [],
 				id: nanoid(6)
