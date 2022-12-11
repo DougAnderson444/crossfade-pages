@@ -18,7 +18,6 @@
 </script>
 
 {#if styling}
-	<!-- Crossfade Component -->
 	<div
 		out:send={{ key: id }}
 		in:receive={{ key: id }}
@@ -31,9 +30,3 @@
 		<slot {handleNavigate} />
 	</div>
 {/if}
-
-<style>
-	div {
-		/* @apply border gap-1 p-1; */
-	}
-</style>

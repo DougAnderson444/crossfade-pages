@@ -4,7 +4,7 @@
 </script>
 
 <FillVertical>
-	<main class="flex flex-col h-full w-full" data-sveltekit-prefetch>
+	<main class="flex flex-col h-full w-full border-4 border-slate-400" data-sveltekit-prefetch>
 		<slot />
 	</main>
 </FillVertical>
