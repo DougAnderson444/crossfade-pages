@@ -7,13 +7,13 @@
 	/**
 	 * @type {any[]}
 	 */
-	export let data = [];
+	export let pageId;
 </script>
 
 <div class="absolute bottom-0 right-0 m-1 p-1">
 	<ToolBox>
 		<ToolItem>
-			<AddItem bind:data>
+			<AddItem {pageId}>
 				<Plus />
 			</AddItem>
 		</ToolItem>

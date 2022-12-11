@@ -1,19 +1,27 @@
-<script>
+<script lang="ts">
 	/**
 	 * On click, adds an item to the layout
 	 */
 	import { nanoid } from 'nanoid/non-secure';
 	import { data } from '$lib/stores';
 
+	export let pageId: string | number;
+
 	function handleAddItem() {
-		console.log('add item');
-		$data = [
+		const id = nanoid(6);
+		$data = {
 			...$data,
-			{
-				children: [],
-				id: nanoid(6)
+			// create the page
+			[id]: {
+				children: []
+			},
+			// add it as a child to the creator page
+			[pageId]: {
+				...$data[pageId],
+				children: [...$data[pageId].children, { id }]
 			}
-		];
+		};
+		console.log('data now: ', $data);
 	}
 </script>
 
