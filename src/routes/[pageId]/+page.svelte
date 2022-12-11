@@ -14,11 +14,8 @@
 	<!-- Otherwise, there is a jump because they don't overlap ech other -->
 	<!-- Technically, this should have a higher z-index as well -->
 	<Crossfade id={$selected} styling={'absolute'}>
-		<a
-			class="w-full h-96 cursor-pointer select-none bg-green-500"
-			contenteditable={false}
-			style="display: block; grid-area: 1/1;"
-			href="/">Go to /</a
-		>
+		<div class="w-96 h-96 cursor-pointer select-none bg-green-500">
+			<a contenteditable={false} style="display: block; grid-area: 1/1;" href="/">Go to /</a>
+		</div>
 	</Crossfade>
 {/if}
