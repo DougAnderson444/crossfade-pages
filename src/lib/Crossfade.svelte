@@ -25,7 +25,7 @@
 		on:click={handleNavigate}
 		on:keypress={handleNavigate}
 		data-id={id}
-		class=" {styling} flex-1 flex flex-col w-fit outline-none select-none"
+		class=" {styling} outline-none select-none"
 		contenteditable={false}
 	>
 		<slot {handleNavigate} />

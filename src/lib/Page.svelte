@@ -23,10 +23,10 @@
 		{#each pageData.children as page, p}
 			<Crossfade id={page.id}>
 				<div
-					class="flex-1 flex flex-col flex-wrap bg-red-500 m-4 p-2 rounded-lg shadow text-white"
+					class="flex-1 flex flex-col flex-wrap w-28 h-28  bg-red-500 m-4 p-2 rounded-lg shadow text-white"
 					out:fade={{ duration }}
 				>
-					<a href="/{page.id}" class="w-24 h-24 select-none cursor-pointer" contenteditable={false}
+					<a href="/{page.id}" class="select-none cursor-pointer" contenteditable={false}
 						><div class="float-right top-0 right-0 h-6 w-6 m-1 text-neutral-800/50">
 							<Expand />
 						</div></a

@@ -8,8 +8,6 @@
 				children: []
 			}
 		};
-	} else {
-		console.log('data defined: ', $data);
 	}
 </script>
 
