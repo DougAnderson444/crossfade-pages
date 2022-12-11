@@ -1,8 +1,9 @@
 <script>
 	import { onMount } from 'svelte';
 	import Resizer from './Resizer.svelte';
-	import { fly, scale } from 'svelte/transition';
+	import { fade, fly, scale } from 'svelte/transition';
 	import { quintOut, elasticOut } from 'svelte/easing';
+	import { duration } from '$lib/crossfade';
 
 	export let styling = 'bg-transparent ';
 	export let focused = false;
@@ -36,7 +37,7 @@
 </script>
 
 <div
-	class="flex-1 flex flex-col m-2 p-2 min-w-0 h-full border border-dashed border-neutral-700/60 font-architect focus:outline-green-500  {styling} "
+	class="flex-1 flex flex-col m-2 p-2 min-w-0 h-full border border-solid border-neutral-700/60 font-architect focus:outline-green-500  {styling} "
 	style:border-radius={bordRad()}
 	style:border-width={borderWidth()}
 	style:outline-radius={bordRad()}
@@ -46,7 +47,7 @@
 	on:blur
 	bind:offsetWidth
 	bind:offsetHeight
-	in:scale={{ easing: elasticOut }}
+	out:fade={{ duration }}
 >
 	<slot />
 	{#if mounted && focused && offsetWidth && offsetHeight}

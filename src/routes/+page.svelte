@@ -25,7 +25,7 @@
 			<Crossfade id={item.id}>
 				<Sketched>
 					<div class="flex-1 flex flex-col flex-wrap w-full h-full">
-						<a href="/foo" class="select-none cursor-pointer" contenteditable={false}
+						<a href="/{item.id}" class="select-none cursor-pointer" contenteditable={false}
 							><div class="float-right top-0 right-0 h-6 w-6 m-1 text-neutral-800/50">
 								<Expand />
 							</div></a
