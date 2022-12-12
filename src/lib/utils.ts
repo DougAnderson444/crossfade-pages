@@ -2,22 +2,25 @@ import { data } from '$lib/stores';
 import { nanoid } from 'nanoid/non-secure';
 import { get } from 'svelte/store';
 
-export function createNewPage(pageId) {
-	const id = nanoid(6);
+export function addNewChild(pageId, childId) {
+	const id = childId || nanoid(6);
 	data.set({
 		...get(data),
-		// create the page
-		[id]: {
-			children: [],
-			color: generateVibrantHex()
-		},
-		// add it as a child to the creator page
+		...createNewPage(id), // create the page
 		[pageId]: {
 			...get(data)[pageId],
-			children: [...get(data)[pageId].children, { id }]
+			children: [...get(data)[pageId].children, { id }] // add it as a child to the creator page
 		}
 	});
-	console.log(get(data));
+}
+
+export function createNewPage(id) {
+	return {
+		[id]: {
+			children: [],
+			color: generatePastelHex() //generateVibrantHex()
+		}
+	};
 }
 
 // make a function that returns a random color from the tailwindcss color palette

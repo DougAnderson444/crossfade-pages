@@ -4,12 +4,12 @@
 	 */
 	import { nanoid } from 'nanoid/non-secure';
 	import { data } from '$lib/stores';
-	import { createNewPage } from '$lib/utils';
+	import { addNewChild } from '$lib/utils';
 
 	export let pageId: string | number;
 
 	function handleAddItem() {
-		createNewPage(pageId);
+		addNewChild(pageId);
 	}
 </script>
 
