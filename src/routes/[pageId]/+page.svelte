@@ -1,10 +1,6 @@
 <script>
 	import Page from '$lib/Page.svelte';
 	import Crossfade from '$lib/Crossfade.svelte';
-	/**
-	 * Pass around $selected so the crossfades know what the to/from send/rx locations are
-	 */
-	import { selected } from '$lib/crossfade';
 
 	/** @type {import('./$types').PageData} */
 	export let data;
