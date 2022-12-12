@@ -1,16 +1,15 @@
 <script>
+	import Crossfade from '$lib/Crossfade.svelte';
+
 	import Page from '$lib/Page.svelte';
 	import { data } from '$lib/stores';
-	import { createNewPage, generatePastelHex, generateVibrantHex } from '$lib/utils';
+	import { createNewPage } from '$lib/utils';
 
-	if (!$data) {
-		$data = {
-			home: {
-				children: [],
-				color: generateVibrantHex()
-			}
-		};
-	}
+	let pageId = 'home'; // manually set the pageId to home
+
+	if (!$data) $data = createNewPage(pageId);
 </script>
 
-<Page pageId={'home'} />
+<Crossfade id={pageId} styling={'absolute w-96 h-96 z-20'}>
+	<Page {pageId} />
+</Crossfade>
