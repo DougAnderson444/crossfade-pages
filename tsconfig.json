@@ -12,7 +12,16 @@
 		"paths": {
 			"$lib": ["src/lib"],
 			"$lib/*": ["src/lib/*"]
-		}
+		},
+		// https://github.com/sveltejs/kit/issues/2040
+		"plugins": [
+			{
+				"transform": "typescript-transform-extensions",
+				"extensions": {
+					".ts": ".js"
+				}
+			}
+		]
 	}
 	// Path aliases are handled by https://kit.svelte.dev/docs/configuration#alias
 	//
