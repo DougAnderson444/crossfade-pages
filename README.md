@@ -35,7 +35,7 @@ import { createNewPage, addNewChild } from '@douganderson444/crossfade-pages';
 </Crossfade>
 ```
 
-## Nested Pages: `src/routes/[pageId]/[...pageId].svelte`
+## Nested Pages: `src/routes/[pageId]/+page.svelte`
 
 ```svelte
 <script>

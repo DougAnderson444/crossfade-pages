@@ -2,7 +2,7 @@ import { data } from '$lib/stores';
 import { nanoid } from 'nanoid/non-secure';
 import { get } from 'svelte/store';
 
-export function addNewChild(pageId, childId) {
+export function addNewChild(pageId: string | number, childId?: string) {
 	const id = childId || nanoid(6);
 	data.set({
 		...get(data),
